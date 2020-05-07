@@ -15,6 +15,7 @@ colorDisplay.textContent = pickedColor;
 resetButton.addEventListener("click", function(){
 	colors = generateRandomColor(numSquare);
 	pickedColor = pickColor();
+	massageDisplay.textContent = ""
 	this.textContent = "Reset New colors"
 	colorDisplay.textContent = pickedColor;
 	for(var i = 0; i < squares.length; i++){
@@ -73,9 +74,9 @@ for(var i = 0; i < squares.length; i++){
 
 		if(clickedColor === pickedColor){
 			changeColor(clickedColor)
-			resetButton.textContent = "Play Again?"
-			h1.style.backgroundColor = clickedColor;
 			massageDisplay.textContent = "Correct"
+			h1.style.backgroundColor = clickedColor;
+			resetButton.textContent = "Play Again?"
 		}else{
 			this.style.backgroundColor = "#c5c2cc"
 			massageDisplay.textContent = "Try Again"
